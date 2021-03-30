@@ -59,7 +59,7 @@ jobs:
 
           - component: logstash-local
             version: 7.8.0
-            context: local_sidercars/data_fusion/logstash/Dockerfile
+            context: local_sidercars/data_fusion/logstash
             title: Logstash
             description: 'Logstash Docker image with configuration files for local environment'
             url: https://www.elastic.co/logstash
