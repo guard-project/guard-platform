@@ -1,0 +1,38 @@
+{
+    "rest-client.defaultHeaders": {
+        "User-Agent": "vscode-restclient",
+        "Authorization": "GUARD eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIxNjE2NzgxMDU4IiwiZXhwIjoiMTY0ODMxNzA1OCIsIm5iZiI6MTYxNjc4MTA1OH0.4jC0t-VJwKR4e--LT-QU36hATUUbf530UL-fHj_bssE",
+        "content-type": "application/json"
+    },
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "instance_agent_uri": "instance/agent",
+            "catalog_agent_uri": "catalog/agent",
+            "instance_algorithm_uri": "instance/algorithm",
+            "catalog_algorithm_uri": "catalog/algorithm",
+            "instance_ebpf_program_uri": "instance/ebpf-program",
+            "catalog_ebpf_program_uri": "catalog/ebpf-program",
+            "type_exec_env_uri": "type/exec-env",
+            "exec_env_uri": "exec-env",
+            "type_network_link_uri": "type/network-link",
+            "network_link_uri": "network-link",
+            "connection_uri": "connection",
+            "data_uri": "data",
+            "event_uri": "event",
+            "pipeline_uri": "pipeline"
+        },
+        "CNIT / OpenStack": {
+            "cb_manager_endpoint": "http://130.251.17.130:5000",
+            "elasticsearch_endpoint": "http://130.251.17.130:9200"
+        },
+        "Darkstar": {
+            "cb_manager_endpoint": "http://0.0.0.0:5000",
+            "elasticsearch_endpoint": "http://guard3.westeurope.cloudapp.azure.com:9200"
+        },
+        "ItalTel / Azure": {
+            "cb_manager_endpoint": "http://guard3.westeurope.cloudapp.azure.com:5000",
+            "elasticsearch_endpoint": "http://guard3.westeurope.cloudapp.azure.com:9200"
+        }
+    },
+    "restructuredtext.confPath": "docs\\conf.py"
+}
