@@ -86,35 +86,35 @@ jobs:
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
             description: 'CB-Manager Docker image with configuration files'
-            url: https://github.com/astrid-project/cb-manager
+            url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.3
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
             description: 'CB-Manager Docker image with configuration files'
-            url: https://github.com/astrid-project/cb-manager
+            url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.2
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
             description: 'CB-Manager Docker image with configuration files'
-            url: https://github.com/astrid-project/cb-manager
+            url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.1
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
             description: 'CB-Manager Docker image with configuration files'
-            url: https://github.com/astrid-project/cb-manager
+            url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.0
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
             description: 'CB-Manager Docker image with configuration files'
-            url: https://github.com/astrid-project/cb-manager
+            url: https://github.com/guard-project/cb-manager
 
 
           - component: logstash-core
@@ -165,7 +165,7 @@ jobs:
             VERSION=${{ matrix.version }}
           no-cache: true
           push: true
-          tags: astridproject/${{ matrix.component }}:${{ matrix.version }}
+          tags: guardproject/${{ matrix.component }}:${{ matrix.version }}
           labels: |
             org.opencontainers.image.title=${{ matrix.title }}
             org.opencontainers.image.description=${{ matrix.description }}
