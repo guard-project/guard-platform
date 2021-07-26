@@ -16,22 +16,22 @@ jobs:
           - component: cnit_ml
             version: version1
             context: core_framework/security_services/algo1.1/algo1.1.2
-            title: Cubebeat
-            description: 'CNIT Machine Learning'
+            title: CNIT ML (Machine Learning)
+            description: 'CNIT ML (Machine Learning)'
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version2
             context: core_framework/security_services/algo1.1/algo1.1.2
-            title: Cubebeat
-            description: 'CNIT Machine Learning'
+            title: CNIT ML (Machine Learning)
+            description: 'CNIT ML (Machine Learning)'
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version3
             context: core_framework/security_services/algo1.1/algo1.1.2
-            title: Cubebeat
-            description: 'CNIT Machine Learning'
+            title: CNIT ML (Machine Learning)
+            description: 'CNIT ML (Machine Learning)'
             url: https://github.com/guard-project/cnit_ml
 
 
