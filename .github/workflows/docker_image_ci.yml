@@ -17,21 +17,21 @@ jobs:
             version: version1
             context: core_framework/security_services/algo1.1/algo1.1.2
             title: CNIT ML (Machine Learning)
-            description: 'CNIT ML (Machine Learning)'
+            description: 'Detects multiple DDoS attacks (multiclass) using Random Forests.'
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version2
             context: core_framework/security_services/algo1.1/algo1.1.2
             title: CNIT ML (Machine Learning)
-            description: 'CNIT ML (Machine Learning)'
+            description: 'Detects multiple DDoS attacks (multiclass) using Random Forests.'
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version3
             context: core_framework/security_services/algo1.1/algo1.1.2
             title: CNIT ML (Machine Learning)
-            description: 'CNIT ML (Machine Learning)'
+            description: 'Detects multiple DDoS attacks (multiclass) using Random Forests.'
             url: https://github.com/guard-project/cnit_ml
 
 
@@ -39,7 +39,7 @@ jobs:
             version: 7.8.0
             context: local_sidercars/monitoring/filebeat
             title: Filebeat
-            description: 'Filebeat Docker image with configuration files'
+            description: 'Lightweight shipper for logs by Elastic.'
             url: https://www.elastic.co/beats/filebeat
 
 
@@ -47,35 +47,35 @@ jobs:
             version: master
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'LCP Docker image with configuration files'
+            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.3
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'LCP Docker image with configuration files'
+            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.2
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'LCP Docker image with configuration files'
+            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.1
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'LCP Docker image with configuration files'
+            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.0
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'LCP Docker image with configuration files'
+            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
             url: https://github.com/guard-project/lcp
 
 
@@ -83,7 +83,7 @@ jobs:
             version: 7.8.0
             context: local_sidercars/data_fusion/logstash
             title: Logstash
-            description: 'Logstash Docker image with configuration files for local environment'
+            description: 'Logstash is a tool for managing events and logs. Image for local services/environments.'
             url: https://www.elastic.co/logstash
 
 
@@ -91,7 +91,7 @@ jobs:
             version: 7.8.0
             context: local_sidercars/monitoring/metricbeat
             title: Metricbeat
-            description: 'Metricbeat Docker image with configuration files'
+            description: 'Lightweight shipper for metrics by Elastic.'
             url: https://www.elastic.co/beats/metricbeat
 
 
@@ -99,7 +99,7 @@ jobs:
             version: 7.8.0
             context: local_sidercars/monitoring/packetbeat
             title: Packetbeat
-            description: 'Packetbeat Docker image with configuration files'
+            description: 'Lightweight shipper for network data.'
             url: https://www.elastic.co/beats/packetbeat
 
 
@@ -107,35 +107,35 @@ jobs:
             version: master
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'CB-Manager Docker image with configuration files'
+            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.3
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'CB-Manager Docker image with configuration files'
+            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.2
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'CB-Manager Docker image with configuration files'
+            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.1
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'CB-Manager Docker image with configuration files'
+            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.0
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'CB-Manager Docker image with configuration files'
+            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
             url: https://github.com/guard-project/cb-manager
 
 
@@ -143,7 +143,7 @@ jobs:
             version: 7.8.0
             context: core_framework/context_broker/logstash
             title: Logstash
-            description: 'Logstash Docker image with configuration files for central node'
+            description: 'Logstash is a tool for managing events and logs. Image for Context Broker.'
             url: https://www.elastic.co/logstash
 
 
