@@ -44,6 +44,7 @@ COPY --from=pip-requirements $INSTALLATION_PATH /usr/local
 COPY settings/$VERSION/config.ini $INSTALLATION_PATH/
 
 # Execute
+USER 1001
 WORKDIR $INSTALLATION_PATH
 ENTRYPOINT [ "python3" ]
 CMD [ "main.py" ]
