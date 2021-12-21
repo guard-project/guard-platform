@@ -27,7 +27,7 @@ RUN pip install --prefix=$INSTALLATION_PATH -r /requirements.txt
 
 
 # Stage FINAL
-FROM python:3.8-alpine as final
+FROM centos/python-35-centos7 as final
 
 ARG COMPONENT=cb-manager
 ARG VERSION=master
@@ -44,7 +44,6 @@ COPY --from=pip-requirements $INSTALLATION_PATH /usr/local
 COPY settings/$VERSION/config.ini $INSTALLATION_PATH/
 
 # Execute
-USER 1001
 WORKDIR $INSTALLATION_PATH
 ENTRYPOINT [ "python3" ]
 CMD [ "main.py" ]
