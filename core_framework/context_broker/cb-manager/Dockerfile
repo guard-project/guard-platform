@@ -7,7 +7,7 @@ FROM alpine/git as git-clone
 ARG COMPONENT=cb-manager
 ARG VERSION=master
 ARG PROJECT=guard
-ARG INSTALLATION_PATH=$HOME/$COMPONENT
+ARG INSTALLATION_PATH=/opt/$COMPONENT
 
 RUN git clone https://github.com/$PROJECT-project/$COMPONENT --branch $VERSION $INSTALLATION_PATH
 
@@ -18,7 +18,7 @@ FROM python:3.8-alpine as pip-requirements
 ARG COMPONENT=cb-manager
 ARG VERSION=master
 ARG PROJECT=guard
-ARG INSTALLATION_PATH=$HOME/$COMPONENT
+ARG INSTALLATION_PATH=/opt/$COMPONENT
 
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev linux-headers libffi-dev cargo openssl-dev
 
@@ -32,7 +32,7 @@ FROM python:3.8-alpine as final
 ARG COMPONENT=cb-manager
 ARG VERSION=master
 ARG PROJECT=guard
-ARG INSTALLATION_PATH=$HOME/$COMPONENT
+ARG INSTALLATION_PATH=/opt/$COMPONENT
 
 LABEL maintainer="alessandro.carrega@cnit.it"
 LABEL description="CB-Manager built with Python version 3.8 on Alpine Linux"
@@ -42,6 +42,8 @@ COPY --from=git-clone $INSTALLATION_PATH $INSTALLATION_PATH
 COPY --from=pip-requirements $INSTALLATION_PATH /usr/local
 
 COPY settings/$VERSION/config.ini $INSTALLATION_PATH/
+
+RUN RUN chgrp -R 0 $INSTALLATION_PATH && chmod -R g=u $INSTALLATION_PATH
 
 # Execute
 WORKDIR $INSTALLATION_PATH
