@@ -43,7 +43,7 @@ COPY --from=pip-requirements $INSTALLATION_PATH /usr/local
 
 COPY settings/$VERSION/config.ini $INSTALLATION_PATH/
 
-RUN RUN chgrp -R 0 $INSTALLATION_PATH && chmod -R g=u $INSTALLATION_PATH
+RUN chgrp -R 0 $INSTALLATION_PATH && chmod -R g=u $INSTALLATION_PATH
 
 # Execute
 WORKDIR $INSTALLATION_PATH
