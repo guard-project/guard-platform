@@ -1,10 +1,10 @@
 name: Docker Image CI
 
 on:
+  push:
   workflow_dispatch: # manual trigger
-
   schedule:
-    - cron: '0 05 * * *' # everyday at 05am
+    - cron: "0 05 * * *" # everyday at 05am
 
 jobs:
   docker:
@@ -17,135 +17,127 @@ jobs:
             version: version1
             context: core_framework/security_services/algo1.1/algo1.1.2
             title: CNIT ML (Machine Learning)
-            description: 'Detects multiple DDoS attacks (multiclass) using Random Forests.'
+            description: "Detects multiple DDoS attacks (multiclass) using Random Forests."
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version2
             context: core_framework/security_services/algo1.1/algo1.1.2
             title: CNIT ML (Machine Learning)
-            description: 'Detects multiple DDoS attacks (multiclass) using Random Forests.'
+            description: "Detects multiple DDoS attacks (multiclass) using Random Forests."
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version3
             context: core_framework/security_services/algo1.1/algo1.1.2
             title: CNIT ML (Machine Learning)
-            description: 'Detects multiple DDoS attacks (multiclass) using Random Forests.'
+            description: "Detects multiple DDoS attacks (multiclass) using Random Forests."
             url: https://github.com/guard-project/cnit_ml
-
 
           - component: filebeat
             version: 7.8.0
             context: local_sidercars/monitoring/filebeat
             title: Filebeat
-            description: 'Lightweight shipper for logs by Elastic.'
+            description: "Lightweight shipper for logs by Elastic."
             url: https://www.elastic.co/beats/filebeat
-
 
           - component: lcp
             version: master
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.3
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.2
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.1
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
 
           - component: lcp
             version: v1.0.0
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
-            description: 'Control plane responsible for programmability and changing the behavior of data plane at run-time.'
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
-
 
           - component: logstash-local
             version: 7.8.0
             context: local_sidercars/data_fusion/logstash
             title: Logstash
-            description: 'Logstash is a tool for managing events and logs. Image for local services/environments.'
+            description: "Logstash is a tool for managing events and logs. Image for local services/environments."
             url: https://www.elastic.co/logstash
-
 
           - component: metricbeat
             version: 7.8.0
             context: local_sidercars/monitoring/metricbeat
             title: Metricbeat
-            description: 'Lightweight shipper for metrics by Elastic.'
+            description: "Lightweight shipper for metrics by Elastic."
             url: https://www.elastic.co/beats/metricbeat
-
 
           - component: packetbeat
             version: 7.8.0
             context: local_sidercars/monitoring/packetbeat
             title: Packetbeat
-            description: 'Lightweight shipper for network data.'
+            description: "Lightweight shipper for network data."
             url: https://www.elastic.co/beats/packetbeat
-
 
           - component: cb-manager
             version: master
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
+            description: "A REST Interface exposes data and events stored in the internal storage system in a structured way."
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.3
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
+            description: "A REST Interface exposes data and events stored in the internal storage system in a structured way."
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.2
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
+            description: "A REST Interface exposes data and events stored in the internal storage system in a structured way."
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.1
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
+            description: "A REST Interface exposes data and events stored in the internal storage system in a structured way."
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
             version: v1.0.0
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
-            description: 'A REST Interface exposes data and events stored in the internal storage system in a structured way.'
+            description: "A REST Interface exposes data and events stored in the internal storage system in a structured way."
             url: https://github.com/guard-project/cb-manager
-
 
           - component: logstash-core
             version: 7.8.0
             context: core_framework/context_broker/logstash
             title: Logstash
-            description: 'Logstash is a tool for managing events and logs. Image for Context Broker.'
+            description: "Logstash is a tool for managing events and logs. Image for Context Broker."
             url: https://www.elastic.co/logstash
-
 
     steps:
       - name: Checkout
