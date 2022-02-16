@@ -15,14 +15,14 @@ jobs:
         include:
           - component: cnit_ml
             version: version1
-            context: core_framework/security_services/algo1.1/algo1.1.2
+            context: core_framework/security_services/algo1.1/algo1.1.2/version1
             title: CNIT ML (Machine Learning)
             description: "Detects multiple DDoS attacks (multiclass) using Random Forests."
             url: https://github.com/guard-project/cnit_ml
 
           - component: cnit_ml
             version: version2
-            context: core_framework/security_services/algo1.1/algo1.1.2
+            context: core_framework/security_services/algo1.1/algo1.1.2/version2
             title: CNIT ML (Machine Learning)
             description: "Detects multiple DDoS attacks (multiclass) using Random Forests."
             url: https://github.com/guard-project/cnit_ml
