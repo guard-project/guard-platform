@@ -137,7 +137,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Clone
-        run: git clone -b developmentCNIT https://alexcarrega:glpat-n4ePfst_LqsHUgjJRtF-@gitlab.com/guard2/guard-platform.git gitlab
+        run: git clone -b developmentCNIT "https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/guard2/guard-platform.git" gitlab
 
       - name: Test
         run: ls gitlab/ -al
