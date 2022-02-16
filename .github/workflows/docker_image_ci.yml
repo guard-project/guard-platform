@@ -139,6 +139,9 @@ jobs:
       - name: Clone
         run: git clone -b developmentCNIT https://alexcarrega:glpat-n4ePfst_LqsHUgjJRtF-@gitlab.com/guard2/guard-platform.git gitlab
 
+      - name: Test
+        run: ls gitlab/ -al
+
       - name: Repo metadata
         id: repo
         uses: actions/github-script@v3
