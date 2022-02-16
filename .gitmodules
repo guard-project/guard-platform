@@ -1,0 +1,3 @@
+[submodule "gitlab"]
+	path = gitlab
+	url = https://gitlab.com/guard2/guard-platform.git
