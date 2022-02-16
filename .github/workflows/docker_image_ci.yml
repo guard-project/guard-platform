@@ -1,8 +1,8 @@
 name: Docker Image CI
 
 on:
+  push:
   workflow_dispatch: # manual trigger
-
   schedule:
     - cron: "0 05 * * *" # everyday at 05am
 
