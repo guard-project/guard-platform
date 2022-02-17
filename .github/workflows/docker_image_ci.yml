@@ -34,6 +34,15 @@ jobs:
             description: "Lightweight shipper for logs by Elastic."
             url: https://www.elastic.co/beats/filebeat
 
+          - component: filebeat
+            version: 7.8.0
+            context: local_sidercars/monitoring/filebeat
+            title: Filebeat
+            description: "Lightweight shipper for logs by Elastic."
+            url: https://www.elastic.co/beats/filebeat
+            variant: api.
+            dockerfile: Dockerfile.api
+
           - component: lcp
             version: master
             context: local_sidercars/local_control_management/lcp
@@ -69,6 +78,51 @@ jobs:
             description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
 
+          - component: lcp
+            version: master
+            context: local_sidercars/local_control_management/lcp
+            title: LCP (Local Control Plane) API
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
+            url: https://github.com/guard-project/lcp
+            variant: api.
+            dockerfile: Dockerfile
+
+          - component: lcp
+            version: v1.0.3
+            context: local_sidercars/local_control_management/lcp
+            title: LCP (Local Control Plane) API
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
+            url: https://github.com/guard-project/lcp
+            variant: api.
+            dockerfile: Dockerfile
+
+          - component: lcp
+            version: v1.0.2
+            context: local_sidercars/local_control_management/lcp
+            title: LCP (Local Control Plane) API
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
+            url: https://github.com/guard-project/lcp
+            variant: api.
+            dockerfile: Dockerfile
+
+          - component: lcp
+            version: v1.0.1
+            context: local_sidercars/local_control_management/lcp
+            title: LCP (Local Control Plane) API
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
+            url: https://github.com/guard-project/lcp
+            variant: api.
+            dockerfile: Dockerfile
+
+          - component: lcp
+            version: v1.0.0
+            context: local_sidercars/local_control_management/lcp
+            title: LCP (Local Control Plane)
+            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
+            url: https://github.com/guard-project/lcp
+            variant: api.
+            dockerfile: Dockerfile
+
           - component: logstash-local
             version: 7.8.0
             context: local_sidercars/data_fusion/logstash
@@ -83,12 +137,30 @@ jobs:
             description: "Lightweight shipper for metrics by Elastic."
             url: https://www.elastic.co/beats/metricbeat
 
+          - component: metricbeat
+            version: 7.8.0
+            context: local_sidercars/monitoring/metricbeat
+            title: Metricbeat
+            description: "Lightweight shipper for metrics by Elastic."
+            url: https://www.elastic.co/beats/metricbeat
+            variant: api.
+            dockerfile: Dockerfile.api
+
           - component: packetbeat
             version: 7.8.0
             context: local_sidercars/monitoring/packetbeat
             title: Packetbeat
             description: "Lightweight shipper for network data."
             url: https://www.elastic.co/beats/packetbeat
+
+          - component: packetbeat
+            version: 7.8.0
+            context: local_sidercars/monitoring/packetbeat
+            title: Packetbeat
+            description: "Lightweight shipper for network data."
+            url: https://www.elastic.co/beats/packetbeat
+            variant: api.
+            dockerfile: Dockerfile.api
 
           - component: cb-manager
             version: master
@@ -173,9 +245,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: gitlab/${{ matrix.context }}
-          file: gitlab/${{ matrix.context }}/Dockerfile
+          file: gitlab/${{ matrix.context }}/${{ matrix.dockerfile || 'Dockerfile' }}
           build-args: |
-            VERSION=${{ matrix.version }}
+            VERSION=${{ matrix.variant || '' }}${{ matrix.version }}
           no-cache: true
           push: true
           tags: guardproject/${{ matrix.component }}:${{ matrix.version }}
