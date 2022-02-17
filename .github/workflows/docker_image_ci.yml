@@ -247,10 +247,10 @@ jobs:
           context: gitlab/${{ matrix.context }}
           file: gitlab/${{ matrix.context }}/${{ matrix.dockerfile || 'Dockerfile' }}
           build-args: |
-            VERSION=${{ matrix.variant || '' }}${{ matrix.version }}
+            VERSION=${{ matrix.version }}
           no-cache: true
           push: true
-          tags: guardproject/${{ matrix.component }}:${{ matrix.version }}
+          tags: guardproject/${{ matrix.component }}:${{ matrix.variant || '' }}${{ matrix.version }}
           labels: |
             org.opencontainers.image.title=${{ matrix.title }}
             org.opencontainers.image.description=${{ matrix.description }}
