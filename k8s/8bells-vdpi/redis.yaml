@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: guard-kube
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 8bells-vdpi
+  template:
+    metadata:
+      labels:
+        app: 8bells-vdpi
+    spec:
+      containers:
+        - image: redis:alpine
+          name: redis
+          volumeMounts:
+            - mountPath: /data
+              name: 8bells-vdpi-redis-data
+      restartPolicy: Always
+      volumes:
+        - name: 8bells-vdpi-redis-data
+          persistentVolumeClaim:
+            claimName: 8bells-vdpi-pv-claim

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: guard-kube
+  name: ntopng
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 8bells-vdpi
+  template:
+    metadata:
+      labels:
+        app: 8bells-vdpi
+    spec:
+      containers:
+        - name: ntopng
+          image: frostasm/ntopng-docker:latest
+          args:
+            - ntopng
+            - --redis
+            - redis
+            - --interface
+            - tcp://nprobe:1234
+            - --local-networks
+            - 130.251.17.0/24
+          ports:
+            - containerPort: 3000
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: guard-kube
+  labels:
+    app: 8bells-vdpi
+  name: ntopng
+spec:
+  ports:
+    - name: ntopng-port
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: 8bells-vdpi
