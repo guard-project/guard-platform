@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: guard-kube
+  name: nprobe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 8bells-vdpi
+  template:
+    metadata:
+      labels:
+        app: 8bells-vdpi
+    spec:
+      containers:
+        - name: nprobe
+          image: frostasm/ntopng-docker:latest
+          args:
+            - nprobe
+            - --interface
+            - none
+            - --collector
+            - none
+            - --collector-port
+            - "2055"
+            - --zmq
+            - tcp://*:1234
+          ports:
+            - containerPort: 2055
+              protocol: UDP
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: guard-kube
+  labels:
+    app: 8bells-vdpi
+  name: nprobe-service
+spec:
+  ports:
+    - name: nprobe-port
+      port: 2055
+      protocol: UDP
+      targetPort: 2055
+  selector:
+    app: 8bells-vdpi
