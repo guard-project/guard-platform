@@ -170,6 +170,13 @@ jobs:
             url: https://github.com/guard-project/cb-manager
 
           - component: cb-manager
+            version: v1.0.4
+            context: core_framework/context_broker/cb-manager
+            title: CB (Context Broker) Manager
+            description: "A REST Interface exposes data and events stored in the internal storage system in a structured way."
+            url: https://github.com/guard-project/cb-manager
+
+          - component: cb-manager
             version: v1.0.3
             context: core_framework/context_broker/cb-manager
             title: CB (Context Broker) Manager
