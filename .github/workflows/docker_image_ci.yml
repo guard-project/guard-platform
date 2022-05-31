@@ -79,49 +79,11 @@ jobs:
             url: https://github.com/guard-project/lcp
 
           - component: lcp
-            version: master
-            context: local_sidercars/local_control_management/lcp
-            title: LCP (Local Control Plane) API
-            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
-            url: https://github.com/guard-project/lcp
-            variant: api.
-            dockerfile: Dockerfile
-
-          - component: lcp
-            version: v1.0.3
-            context: local_sidercars/local_control_management/lcp
-            title: LCP (Local Control Plane) API
-            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
-            url: https://github.com/guard-project/lcp
-            variant: api.
-            dockerfile: Dockerfile
-
-          - component: lcp
-            version: v1.0.2
-            context: local_sidercars/local_control_management/lcp
-            title: LCP (Local Control Plane) API
-            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
-            url: https://github.com/guard-project/lcp
-            variant: api.
-            dockerfile: Dockerfile
-
-          - component: lcp
-            version: v1.0.1
-            context: local_sidercars/local_control_management/lcp
-            title: LCP (Local Control Plane) API
-            description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
-            url: https://github.com/guard-project/lcp
-            variant: api.
-            dockerfile: Dockerfile
-
-          - component: lcp
-            version: v1.0.0
+            version: api
             context: local_sidercars/local_control_management/lcp
             title: LCP (Local Control Plane)
             description: "Control plane responsible for programmability and changing the behavior of data plane at run-time."
             url: https://github.com/guard-project/lcp
-            variant: api.
-            dockerfile: Dockerfile
 
           - component: logstash-local
             version: 7.8.0
